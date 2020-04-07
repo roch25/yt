@@ -6,7 +6,7 @@
       <title>video-browser-using-react</title>
       <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
       <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-      <script src = "script_react.js"></script>
+      <script src = "script_react.js" type="text/jsx"></script>
     </head>
 
     <body bgcolor="#2A2729">
