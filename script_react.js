@@ -1,9 +1,7 @@
 function searchlist(){
     var url="https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
     var str=document.getElementById("search_box").value;
-    console.log('Hello');
     const data = 'Search Results';
-    const element = React.createElement("h2", null, data);
 
     const opts = {
     		params: {
@@ -20,7 +18,6 @@ function searchlist(){
         var a_list = [];
         for(var i = 0; i < search_item.length; i++){
           a_list[i] = search_item[i].snippet.title;
-          // console.log(a_list[i]);
         }
         var ListRender = React.createClass({displayName: "ListRender",
         render: function() {
