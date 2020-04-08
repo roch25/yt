@@ -4,7 +4,9 @@ import logo from './yt2.svg';
 import './App.css';
 import axios from "axios";
 
+
 function shoot(){
+  document.getElementById("search-result-box").style.visibility = "visible";
   var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
 	var str = document.getElementById("search-box").value;
   const opts = {
@@ -21,22 +23,26 @@ function shoot(){
       console.log("tag"+str);
       var a_list = [];
       var vidThumburl = [];
+      // var array = [];
       for(var i = 0; i < search_item.length; i++){
         a_list[i] = search_item[i].snippet.title;
         vidThumburl[i] =  search_item[i].snippet.thumbnails.default.url;
-        console.log(a_list[i]);
+        console.log(vidThumburl);
       }
+      // console.log(array);
+
       function SearchResList(props) {
         const a_list = props.a_list;
-        const listItems = a_list.map((a_list) =>
-          <li key={a_list}>{a_list} </li>
-        );
+        const i_list = props.i_list;
+        const items =  i_list.map((i_list) =>  <li key={i_list}> <img src={i_list} id="thumbnail" alt="No Image Available" /><p>Title</p></li>)
+        const items1 =  a_list.map((a_list) =>  <li key={a_list}> {a_list}</li>)
+
         return (
-          <ul>{listItems}</ul>
+          <ul>{items} </ul>
         )
       }
       ReactDOM.render(
-        <SearchResList a_list={a_list} />,  document.getElementById('search-result-box')
+        <SearchResList a_list={a_list} i_list = {vidThumburl} />,  document.getElementById('search-result-box')
       );
 
     })
