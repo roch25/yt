@@ -66,8 +66,8 @@
 }
 
 #thumbnail{
-  height:140px;
-  margin-right: 15px;
+  height: 25vmin;
+  margin-right: 5px;
 }
 
 ul {
@@ -80,7 +80,7 @@ ul {
 #li1 {
 	padding: 3px;
 	display: flex;
-
+  /* justify-content: space-between; */
 }
 
 #title {
@@ -95,7 +95,11 @@ ul {
 #li2{
   display: flex;
   color: white;
+  background-color:  #2A2729;
+  max-height: 25vmin;
+  width: 105vmin;
   flex-direction: column;
+  padding: 5px;
 }
 
 #desc {
