@@ -20,29 +20,26 @@ function shoot(){
   axios.get(url, opts)
     .then(function (response) {
       var search_item = response.data.items;
-      console.log("tag"+str);
-      var a_list = [];
-      var vidThumburl = [];
-      // var array = [];
-      for(var i = 0; i < search_item.length; i++){
-        a_list[i] = search_item[i].snippet.title;
-        vidThumburl[i] =  search_item[i].snippet.thumbnails.default.url;
-        console.log(vidThumburl);
-      }
-      // console.log(array);
-
+      console.log("tag: "+str);
+      console.log(search_item);
       function SearchResList(props) {
-        const a_list = props.a_list;
-        const i_list = props.i_list;
-        const items =  i_list.map((i_list) =>  <li key={i_list}> <img src={i_list} id="thumbnail" alt="No Image Available" /><p>Title</p></li>)
-        const items1 =  a_list.map((a_list) =>  <li key={a_list}> {a_list}</li>)
+         const a_list = props.a_list;
+         const items =  a_list.map((a_list) =>
+         <li id = 'li1' key = {a_list.snippet.title}>
+          <img src={a_list.snippet.thumbnails.default.url} id="thumbnail" alt="No Image Available" />
+           <li id = "li2">
+             <p id = "title">{a_list.snippet.title}</p>
+             <p id = "desc">{a_list.snippet.description}</p>
+           </li>
+
+         </li>)
 
         return (
           <ul>{items} </ul>
         )
       }
       ReactDOM.render(
-        <SearchResList a_list={a_list} i_list = {vidThumburl} />,  document.getElementById('search-result-box')
+        <SearchResList a_list={search_item} />,  document.getElementById('search-result-box')
       );
 
     })

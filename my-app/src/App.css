@@ -73,17 +73,38 @@
 ul {
 	display: flex;
   color: white;
+  display: inline-block;
 	flex-direction: column;
 }
 
-li {
-	padding: 10px;
+#li1 {
+	padding: 3px;
 	display: flex;
-	margin: 5px;
+
 }
 
-#title1{
+#title {
+	display: flex;
+	text-align: left;
+	font-family: Ariel, Helvetica, serif;
+	font-size: 16px;
+  font-weight: bold;
+	justify-content: left;
+}
+
+#li2{
+  display: flex;
   color: white;
+  flex-direction: column;
+}
+
+#desc {
+	display: flex;
+	text-align: left;
+	font-family: Ariel, Helvetica, serif;
+	font-size: 14px;
+	justify-content: left;
+	align-content: flex-start;
 }
 
 /* @keyframes App-logo-spin {
