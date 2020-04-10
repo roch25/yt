@@ -53,11 +53,22 @@
   color: white;
 }
 
+#player{
+  background-color: white;
+  margin: 24vh;
+}
+
+#c{
+  background-color: pink;
+  /* margin-top: 45px; */
+}
+
 #search-result-box{
   visibility: hidden;
   background-color: #3A3A3A;
-  height: 50%;
+  height: 70%;
   width: 150vh;
+  text-align: center;
   margin-left: 30vh;
 }
 
