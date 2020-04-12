@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 async function fetch_search_list() {
   document.getElementById("search-result-box").style.visibility = "visible";
@@ -17,7 +16,6 @@ async function fetch_search_list() {
   try {
     const response = await axios.get(url, opts);
     var search_item = response.data.items;
-    console.log(search_item);
   } catch (error) {
     console.error(error);
   }
