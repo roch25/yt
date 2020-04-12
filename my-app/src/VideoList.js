@@ -1,6 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import VideoPlayer from './VideoPlayer'
+import ReactPlayer from 'react-player';
+
+function VideoPlayer(props){
+ var vid_id = props.vid_id;
+ var desc = props.desc;
+ var title = props.title;
+ var videoUrl = "https://www.youtube.com/watch?v=" + vid_id;
+ console.log(videoUrl);
+  return (
+    <div id = "player">
+      <ReactPlayer  url = {videoUrl}/>
+      <p id = 'p1'>{title}</p>
+      <p>{desc}</p>
+    </div>
+  )
+}
 
 function play_video(vidId, title, desc){
   console.log('boop '+vidId);
@@ -35,54 +50,3 @@ function VideoList(props) {
 }
 
 export default VideoList;
-
-
-// function ImageList(props){
-//   const t_img = props.image_list;
-//   return (
-//
-//   )
-// }
-//
-// function Title(props){
-//   const title = props.title_items;
-//   const title1 = title.map((title) =>
-//     title
-//   )
-//   // console.log(imageThumb);
-//   return (
-//     <p id = "title">{title1}</p>
-//   )
-// }
-//
-// function Description(props){
-//   const desc = props.desc_items;
-//   const desc_items= desc.map((desc) =>
-//   desc
-//   )
-//   // console.log(imageThumb);
-//   return (
-//     <p id = "description">{desc}</p>
-//   )
-// }
-// function ListItems(props){
-//   const a_list = props.li;
-//   const img_items =  a_list.map((a_list) =>
-//   a_list.snippet.thumbnails.default.url
-//   )
-//   const title_items =  a_list.map((a_list) =>
-//     a_list.snippet.title
-//   )
-//   const desc_items =  a_list.map((a_list) =>
-//     a_list.snippet.description
-//   )
-//   return (
-//     <li>
-//       <ImageList image_list = {img_items}/>
-//       <li>
-//         <Title title_items ={title_items}/>
-//         <Description desc_items= {desc_items}/>
-//       </li>
-//     </li>
-//   )
-// }
