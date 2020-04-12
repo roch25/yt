@@ -56,7 +56,6 @@ body{
   background-color: #3A3A3A;
 }
 
-
 #search-result-box{
   visibility: hidden;
   background-color: #3A3A3A;
@@ -91,6 +90,7 @@ ul {
 #li1 {
 	padding: 3px;
 	display: flex;
+  cursor: pointer;
 }
 
 #title {
