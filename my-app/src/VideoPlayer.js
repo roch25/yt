@@ -11,7 +11,7 @@ function VideoPlayer(props){
   return (
     <div id = "player">
       <ReactPlayer url = {videoUrl}/>
-      <p id = 'p1'>{title}</p>
+      <p className = 'p1'>{title}</p>
       <p>{desc}</p>
     </div>
   )

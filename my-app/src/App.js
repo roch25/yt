@@ -6,13 +6,17 @@ import fetch_search_list from './Request';
 import VideoList from './VideoList';
 
 class App extends React.Component{
-  display_search_list(){
-    fetch_search_list().then(res => {
-      ReactDOM.render(
-        <VideoList a_list = {res}/>,
-        document.getElementById('search-result-box')
-      );
-    })
+  constructor(props) {
+   super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+   fetch_search_list().then(res => {
+     ReactDOM.render(
+       <VideoList a_list = {res}/>,
+       document.getElementById('search-result-box')
+     );
+   })
   }
   render(){
     return (
@@ -20,9 +24,9 @@ class App extends React.Component{
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <div className = "Search">
-      <input type = "text" id = "search-box" placeholder = "Search"/>
+      <input type = "text" id = "search-box" placeholder = "Search" />
       &nbsp;
-      <input className = "search-button" type = "button" onClick = {this.display_search_list} src = "search.png"/>
+      <input className = "search-button" type = "button" onClick = {this.handleClick} />
       </div>
       </header>
       <div id="search-result-box"></div>
