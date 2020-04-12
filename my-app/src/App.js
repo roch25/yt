@@ -2,7 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import logo from './yt2.svg';
 import './App.css';
-import display_search_list from './Request';
+import fetch_search_list from './Request';
+import VideoList from './VideoList';
+
+function display_search_list(){
+  fetch_search_list().then(res => {
+    console.log(res);
+    ReactDOM.render(
+      <VideoList a_list = {res}/>,
+      document.getElementById('search-result-box')
+    );
+  })
+}
 
 function App() {
   return (
