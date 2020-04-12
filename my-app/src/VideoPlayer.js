@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReactPlayer from 'react-player';
 
 function VideoPlayer(props){

@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from 'react';
 
 async function fetch_search_list() {
   document.getElementById("search-result-box").style.visibility = "visible";
