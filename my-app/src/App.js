@@ -4,16 +4,25 @@ import logo from './yt2.svg';
 import './App.css';
 import fetchSearchList from './Request';
 import VideoList from './VideoList';
+import VideoPlayer from './VideoPlayer'
 
 class App extends React.Component{
   constructor(props) {
    super(props);
     this.handleClick = this.handleClick.bind(this);
   }
+  playVideo = (...vidDetails) => {
+    console.log("Hello"+vidDetails[0]);
+    // console.log(vidDetails[0]);
+    ReactDOM.render(
+      <VideoPlayer vid_id = {vidDetails[0]} title = {vidDetails[1]} desc = {vidDetails[2]} />,
+      document.getElementById('search-result-box')
+    );
+  }
   handleClick() {
    fetchSearchList().then(res => {
      ReactDOM.render(
-       <VideoList a_list = {res}/>,
+       <VideoList a_list = {res} playVideo = {this.playVideo}/>,
        document.getElementById('search-result-box')
      );
    })
