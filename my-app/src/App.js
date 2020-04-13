@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import logo from './yt2.svg';
 import './App.css';
-import fetch_search_list from './Request';
+import fetchSearchList from './Request';
 import VideoList from './VideoList';
 
 class App extends React.Component{
@@ -11,7 +11,7 @@ class App extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-   fetch_search_list().then(res => {
+   fetchSearchList().then(res => {
      ReactDOM.render(
        <VideoList a_list = {res}/>,
        document.getElementById('search-result-box')
