@@ -7,19 +7,16 @@ import VideoList from './VideoList';
 import VideoPlayer from './VideoPlayer'
 
 class App extends React.Component{
-  constructor(props) {
-   super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+  // constructor(props) {
+  //  super(props);
+  // }
   playVideo = (...vidDetails) => {
-    console.log("Hello"+vidDetails[0]);
-    // console.log(vidDetails[0]);
     ReactDOM.render(
       <VideoPlayer vid_id = {vidDetails[0]} title = {vidDetails[1]} desc = {vidDetails[2]} />,
       document.getElementById('search-result-box')
     );
   }
-  handleClick() {
+  handleClick = () => {
    fetchSearchList().then(res => {
      ReactDOM.render(
        <VideoList a_list = {res} playVideo = {this.playVideo}/>,
@@ -38,7 +35,8 @@ class App extends React.Component{
       <input className = "search-button" type = "button" onClick = {this.handleClick} />
       </div>
       </header>
-      <div id="search-result-box"></div>
+      <div id="search-result-box">
+      </div>
       </div>
     );
   }

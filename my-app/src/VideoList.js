@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import VideoPlayer from './VideoPlayer'
 import ListItems from './ListItems';
-import PropTypes from 'prop-types';
 
 class VideoList extends React.Component {
   render(){
