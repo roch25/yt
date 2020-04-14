@@ -6,37 +6,44 @@ import fetchSearchList from './Request';
 import VideoList from './VideoList';
 import VideoPlayer from './VideoPlayer'
 
-class App extends React.Component{
-  // constructor(props) {
-  //  super(props);
-  // }
-  playVideo = (...vidDetails) => {
-    ReactDOM.render(
-      <VideoPlayer vid_id = {vidDetails[0]} title = {vidDetails[1]} desc = {vidDetails[2]} />,
-      document.getElementById('search-result-box')
-    );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoList: [],
+      showVideoPlayer: false,
+      videoDetails: {}
+    }
   }
-  handleClick = () => {
-   fetchSearchList().then(res => {
-     ReactDOM.render(
-       <VideoList a_list = {res} playVideo = {this.playVideo}/>,
-       document.getElementById('search-result-box')
-     );
-   })
+  playVideo = (...videoDetails) => {
+    console.log(videoDetails)
+
+    this.setState({ showVideoPlayer : true , videoDetails })
   }
-  render(){
+  handleClick = async () => {
+    let res = await fetchSearchList()
+    this.setState({ videoList: res })
+  }
+  render() {
     return (
       <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <div className = "Search">
-      <input type = "text" id = "search-box" placeholder = "Search" />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <div className="Search">
+            <input type="text" id="search-box" placeholder="Search" />
       &nbsp;
-      <input className = "search-button" type = "button" onClick = {this.handleClick} />
-      </div>
-      </header>
-      <div id="search-result-box">
-      </div>
+      <input className="search-button" type="button" onClick={this.handleClick} />
+          </div>
+        </header>
+        {
+          this.state.showVideoPlayer &&
+          <VideoPlayer
+            vid_id={this.state.videoDetails[0]}
+            title={this.state.videoDetails[1]}
+            desc={this.state.videoDetails[2]} />
+        }
+        <VideoList a_list={this.state.videoList} playVideo={this.playVideo} />
       </div>
     );
   }

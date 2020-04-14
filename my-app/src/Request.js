@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function fetchSearchList() {
-  document.getElementById("search-result-box").style.visibility = "visible";
+ 
   var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
   var str = document.getElementById("search-box").value;
   const opts = {
