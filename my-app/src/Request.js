@@ -1,9 +1,8 @@
 import axios from "axios";
 
 async function fetchSearchList() {
- 
-  var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
-  var str = document.getElementById("search-box").value;
+  const url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
+  let str = document.getElementById("search-box").value;
   const opts = {
     params: {
       q: str,
@@ -14,11 +13,12 @@ async function fetchSearchList() {
   }
   try {
     const response = await axios.get(url, opts);
-    var search_item = response.data.items;
+    let search_item = response.data.items;
+    return search_item;
   } catch (error) {
     console.error(error);
   }
-  return search_item;
+ 
 }
 
 export default fetchSearchList;
