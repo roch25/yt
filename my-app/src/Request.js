@@ -1,24 +1,23 @@
 import axios from "axios";
 
-async function fetchSearchList() {
+async function fetchSearchList(searchString) {
   const url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
-  let str = document.getElementById("search-box").value;
   const opts = {
     params: {
-      q: str,
+      q: searchString,
       part: 'snippet',
       type: 'video',
       maxResults: 10
     }
   }
+  let search_item;
   try {
     const response = await axios.get(url, opts);
-    let search_item = response.data.items;
-    return search_item;
+    search_item = response.data.items;
   } catch (error) {
     console.error(error);
   }
- 
+  return search_item;
 }
 
 export default fetchSearchList;

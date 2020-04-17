@@ -8,7 +8,7 @@ function VideoPlayer(props){
  var videoUrl = "https://www.youtube.com/watch?v=" + vid_id;
  console.log(videoUrl);
   return (
-    <div id = "player">
+    <div className = "player">
       <ReactPlayer url = {videoUrl}/>
       <p className = 'p1'>{title}</p>
       <p>{desc}</p>

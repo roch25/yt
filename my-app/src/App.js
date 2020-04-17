@@ -4,6 +4,8 @@ import './App.css';
 import fetchSearchList from './Request';
 import VideoList from './VideoList';
 import VideoPlayer from './VideoPlayer'
+import ErrorMsg from './ErrorMsg'
+import error from './ne.png'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,18 +13,15 @@ class App extends React.Component {
     this.state = {
       videoList: [],
       showVideoPlayer: false,
-      videoDetails: {}
+      videoDetails: {},
     }
   }
-  playVideo = (...videoDetails) => {
-    console.log(videoDetails)  
+  playVideo = (...videoDetails) => { 
     this.setState({ showVideoPlayer : true , videoDetails })
   }
   handleClick = async () => {
-    let res = await fetchSearchList()
-    // res.forEach(element => {
-    //   console.log(element.id.videoId);
-    // });    
+    let str = document.getElementById("search-box").value;
+    let res = await fetchSearchList(str)  
     this.setState({ videoList: res }) 
   }
   render() {
@@ -38,11 +37,15 @@ class App extends React.Component {
         {
           this.state.showVideoPlayer &&
           <VideoPlayer
-            vid_id={this.state.videoDetails[0]}
-            title={this.state.videoDetails[1]}
-            desc={this.state.videoDetails[2]} />
+          vid_id={this.state.videoDetails[0]}
+          title={this.state.videoDetails[1]}
+          desc={this.state.videoDetails[2]} />
         }
-        <VideoList a_list={this.state.videoList} playVideo={this.playVideo} />
+        { 
+          this.state.videoList !== undefined ? 
+          <VideoList a_list={this.state.videoList} playVideo={this.playVideo} /> 
+          : <ErrorMsg msg = 'An error has occured' src = {error}/>
+        }
       </div>
     );
   }
