@@ -13,17 +13,23 @@ class App extends React.Component {
     this.state = {
       videoList: [],
       showVideoPlayer: false,
-      videoDetails: {},
+      videoDetails: {}
     }
   }
   playVideo = (...videoDetails) => { 
     this.setState({ showVideoPlayer : true , videoDetails })
   }
+
+  closeVideoPlayer = () => { 
+    this.setState({showVideoPlayer : false})
+  }
+
   handleClick = async () => {
     let str = document.getElementById("search-box").value;
     let res = await fetchSearchList(str)  
-    this.setState({ videoList: res }) 
+    this.setState({ videoList: res , showVideoPlayer : false}) 
   }
+
   render() {
     return (
       <div className="App">
@@ -39,7 +45,8 @@ class App extends React.Component {
           <VideoPlayer
           vid_id={this.state.videoDetails[0]}
           title={this.state.videoDetails[1]}
-          desc={this.state.videoDetails[2]} />
+          desc={this.state.videoDetails[2]} 
+          closeVideoPlayer = {this.closeVideoPlayer} />
         }
         { 
           this.state.videoList !== undefined ? 

@@ -14,6 +14,8 @@ async function fetchSearchList(searchString) {
   try {
     const response = await axios.get(url, opts);
     search_item = response.data.items;
+    console.log(search_item);
+    
   } catch (error) {
     console.error(error);
   }
