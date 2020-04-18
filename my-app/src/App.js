@@ -45,7 +45,7 @@ class App extends React.Component {
           <VideoPlayer
           vid_id={this.state.videoDetails[0]}
           title={this.state.videoDetails[1]}
-          desc={this.state.videoDetails[2]} 
+          channelName ={this.state.videoDetails[2]} 
           closeVideoPlayer = {this.closeVideoPlayer} />
         }
         { 

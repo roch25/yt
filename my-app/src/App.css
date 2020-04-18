@@ -75,21 +75,37 @@ ul {
   margin: 0 0 10px 0;
   display: flex;
   cursor: pointer;
+  overflow: auto;
   background-color: rgb(48, 47, 47);
-  border: 1px hidden;
+  border: 1px solid rgb(48, 47, 47);
 }
 
 .li1:hover {
   border: 1px solid rgb(133, 133, 133);
 }
 
+.p2{
+  margin: 6px;
+  font-family: Ariel, Helvetica, serif;
+  color:white;
+}
+
 .title {
-	display: flex;
-	text-align: left;
-	font-family: Ariel, Helvetica, serif;
-	font-size: 16px;
+  font-size: 18px;
+  justify-content: flex-start;
   font-weight: bold;
-	justify-content: left;
+}
+
+.desc {
+  font-size: 15px;
+  font-style: normal;
+  justify-content: flex-end;
+  font-weight: lighter;
+}
+
+.channelName{
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .li2{
@@ -101,14 +117,6 @@ ul {
   padding: 5px;
 }
 
-.desc {
-	display: flex;
-	text-align: left;
-	font-family: Ariel, Helvetica, serif;
-	font-size: 14px;
-	justify-content: left;
-	align-content: flex-start;
-}
 
 .error{
   position: fixed;
