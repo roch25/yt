@@ -1,7 +1,8 @@
 import axios from "axios";
 
 async function fetchSearchList(searchString) {
-  const url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
+  const key = "AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
+  const url = "https://www.googleapis.com/youtube/v3/search?key="+key;
   const opts = {
     params: {
       q: searchString,
