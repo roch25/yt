@@ -10,26 +10,32 @@ import error from './ne.png'
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.api_key = "AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
+    this.url = "https://www.googleapis.com/youtube/v3";
     this.state = {
       videoList: [],
       showVideoPlayer: false,
-      videoDetails: {}
+      videoDetails: {},
+      vidInfo: {}
     }
   }
-  playVideo = (...videoDetails) => { 
-    this.setState({ showVideoPlayer : true , videoDetails })
+  playVideo = async (...videoDetails) => { 
+    let res = await fetchSearchList(null, this.api_key, this.url, 'videos', videoDetails[0]);
+    console.log(res.items);
+    this.setState({ showVideoPlayer : true , videoDetails, vidInfo: res.items })
   }
-
+  
   closeVideoPlayer = () => { 
     this.setState({showVideoPlayer : false})
   }
-
+  
   handleClick = async () => {
     let str = document.getElementById("search-box").value;
-    let res = await fetchSearchList(str)  
+    let res = await fetchSearchList(str, this.api_key, this.url, 'search', null);
+    res = res.items;
     this.setState({ videoList: res , showVideoPlayer : false}) 
   }
-
+  
   render() {
     return (
       <div className="App">
@@ -46,6 +52,7 @@ class App extends React.Component {
           vid_id={this.state.videoDetails[0]}
           title={this.state.videoDetails[1]}
           channelName ={this.state.videoDetails[2]} 
+          vidStats = {this.state.vidInfo}
           closeVideoPlayer = {this.closeVideoPlayer} />
         }
         { 

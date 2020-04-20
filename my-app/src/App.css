@@ -6,6 +6,15 @@ body{
   background-color: #2A2729
 }
 
+.like1{
+  display:flex;
+  flex-direction: row;
+}
+
+.likeIcon{
+  margin-top: 7px;
+}
+
 .App-logo {
   height: 8vmin;
   pointer-events: none;
@@ -19,6 +28,10 @@ body{
   margin-left: 200px;
   margin-top: 10px;
 	margin-bottom: -10;
+}
+
+.r-player{
+  margin-bottom: 15px;
 }
 
 .Search{
@@ -68,6 +81,16 @@ ul {
   color: white;
   display: inline-block;
   flex-direction: column;
+}
+
+.sub{
+  margin: 6px;
+
+}
+
+.p3{
+  margin: 0;
+  padding: 5px;
 }
 
 .li1 {

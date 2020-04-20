@@ -1,12 +1,12 @@
-async function fetchSearchList(searchString) {
+async function fetchSearchList(searchString, key, url, activity, vidId) {
   let search_item;
-  const key = "AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
-  const url = "https://www.googleapis.com/youtube/v3/search?key="+key+"&q="+searchString+"&part=snippet&type=video&maxResults=10";
-  const fetchResult = fetch(url)
-  const response = await fetchResult;
+  const final_url = (activity === 'search') ?
+  url+"/"+activity+"?key="+key+"&q="+searchString+"&part=snippet&type=video&maxResults=10" : 
+  url+"/"+activity+"?id="+vidId+"&key="+key+"&part=snippet,contentDetails,statistics,status";
+  console.log(final_url);
+  const response = await fetch(final_url);
   const data = await response.json();
-  console.log(data.items);
-  search_item = data.items;
+  search_item = data;
   return search_item;
 }
 
