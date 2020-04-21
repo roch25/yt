@@ -10,8 +10,6 @@ import error from './ne.png'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.api_key = "AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
-    this.url = "https://www.googleapis.com/youtube/v3";
     this.state = {
       videoList: [],
       showVideoPlayer: false,
@@ -20,7 +18,7 @@ class App extends React.Component {
     }
   }
   playVideo = async (...videoDetails) => { 
-    let res = await fetchSearchList(null, this.api_key, this.url, 'videos', videoDetails[0]);
+    let res = await fetchSearchList('videos', videoDetails[0]);
     console.log(res.items);
     this.setState({ showVideoPlayer : true , videoDetails, vidInfo: res.items })
   }
@@ -31,7 +29,7 @@ class App extends React.Component {
   
   handleClick = async () => {
     let str = document.getElementById("search-box").value;
-    let res = await fetchSearchList(str, this.api_key, this.url, 'search', null);
+    let res = await fetchSearchList('search', str);
     res = res.items;
     this.setState({ videoList: res , showVideoPlayer : false}) 
   }
