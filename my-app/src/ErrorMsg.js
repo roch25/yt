@@ -7,7 +7,7 @@ class ErrorMsg extends React.Component{
     render(){
         return (
             <div className = 'error'>
-                <img src = {this.props.src} className = 'errorImg' alt = ""/>
+                <img src = {this.props.src} alt = ""/>
                 <h3>{this.props.msg}</h3>
             </div>
         );

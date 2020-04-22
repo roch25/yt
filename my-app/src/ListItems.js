@@ -7,18 +7,18 @@ class ListItem extends React.Component {
   render() {
     let a_list = this.props.li;
     return (
-      <li
-      className='li1'
-      key={a_list.id.videoId}
+      <li className='list__item' key={a_list.id.videoId}
       onClick={
         ()=>this.props.playVideo(a_list.id.videoId, a_list.snippet.title, a_list.snippet.channelTitle)
-      }
-      >
-        <img src={a_list.snippet.thumbnails.default.url} className="thumbnail" alt="" />
-        <div className="li2">
-          <p className="title p2">{a_list.snippet.title}</p>
-          <p className="channelName p2">{a_list.snippet.channelTitle}</p>
-          <p className="p2 desc">{a_list.snippet.description}</p>
+      }>
+        <div className = 'container'>
+          <img src={a_list.snippet.thumbnails.default.url} alt="" />
+          <p></p>
+        </div>
+        <div className="list__item__list2">
+          <p className="list__item__list2__title">{a_list.snippet.title}</p>
+          <p className="list__item__list2__channelName">{a_list.snippet.channelTitle}</p>
+          <p className="list__item__list2__desc">{a_list.snippet.description}</p>
         </div>
       </li>
     );

@@ -1,0 +1,45 @@
+.App{
+    header{
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 20vh;
+            height: 8vh;
+            pointer-events: none;
+        }
+        .Search{
+            margin: 16px 20% auto;
+            display: flex;
+            #search-box{
+                min-width:40vw;
+                position: relative;
+                padding: 10px 30px 10px 5px;
+            }
+            .search-button{
+                background: url(search_h1.png) no-repeat center center;
+                background-size: auto;
+                background-size: 20px 20px;
+                border-radius: 0 3px 3px 0;
+                width: 48px;
+                min-height: 6vmin;
+                position: relative;
+                left: -60px;
+                top: 0px;
+                cursor: pointer;
+                &:hover{
+                    background-color: $color-light-grey;  
+                }
+            } 
+        }
+        @include mobile(){
+            flex-direction: column;
+            .Search{
+                margin: 16px 4% auto;
+            }
+            img{
+                width: 18vh;
+                height: 6vh;
+            }
+        }
+    }
+}

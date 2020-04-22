@@ -1,0 +1,61 @@
+.player{
+    padding: 2vh;
+    margin: 2vh;
+    display: grid;
+    grid-template-columns: 94% 6%;
+    max-height: 460px;
+    background-color: $color-alt-grey;
+    position: relative;
+    color: $color-white;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+    animation: 2s ease-in 0s 1 slideIn; //to-do impro
+    &__sub{
+        padding: 2px;
+        iframe{
+            width: 620px;
+            height: 340px;
+        }
+        &__views{
+            font-size: 14px;
+            color: $color-light-grey;
+        }
+        &__likes{
+            display: flex;
+            vertical-align: top;
+            padding: 0.1rem;
+            &__value{
+                margin-top: -0.07rem;
+            }
+        }
+    }
+    &__close{
+        cursor: pointer;
+        padding: 1px;
+        width: 30px;
+        height: 30px;
+        background-color: $color-light-grey;
+        top: -4px;
+        right: -4px;
+        border-radius: 20px;
+        position: absolute;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        &:hover{
+            background-color: $color-white;
+            color: $color-dark-grey;
+        }
+        &:active{
+            transform: translateY(2px);
+        }
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

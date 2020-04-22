@@ -1,0 +1,81 @@
+.list{
+    padding: 0 2px;
+    margin: 2vh 4vh auto;
+    max-width: 70vw;
+    &__item{
+        cursor: pointer;
+        padding: 2px;
+        margin: 0 0 4px 0;
+        display: flex;
+        max-height: 30vh;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid $color-dark-grey;
+        .container{
+            position: relative;
+            img {
+                min-width: 32min;
+                min-height: 24vmin;
+                margin-right: 5px;
+                padding: 2px;
+            }
+            p{ // to-do: display duration of vid
+                position: absolute;
+                bottom: 8px;
+                right: 12px;
+                font-size: 4vh;
+                color: $color-white;
+                background-color: $color-dark-grey;
+                border-radius: 4px;
+                padding: 2px;
+                opacity: 0.8;
+            }
+        }
+        &__list2{
+            padding: 2px;
+            p{
+                margin: 7px;             
+            }
+            &__title{
+                font-size: map-get($font-size, medium);
+                font-weight: bold;
+            }
+            &__channelName{
+                font-size: map-get($font-size, medium);
+                font-weight: normal;
+            }
+            &__desc{
+                color: $color-light-grey;
+                font-size: map-get($font-size, small);
+                font-style: normal;
+                font-weight: lighter;
+            }
+            // to-do change font when player is open
+        }
+        &:hover {
+            border: 1px solid $color-light-grey;
+        }
+        &:active {
+            border: 1px solid $color-light-grey;
+            opacity: 0.7;
+        }
+    }
+    @include mobile(){
+        .list__item__list2{
+
+            &__title{
+                font-size: map-get($font-size, small);
+            }
+            &__channelName{
+                font-size: map-get($font-size, small);
+            }
+            &__desc{
+               font-size: map-get($font-size, x-small);
+            }
+        }
+        .container img{
+            min-width: 28min;
+            min-height: 20vmin;
+        }   
+    }
+}

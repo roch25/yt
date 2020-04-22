@@ -5,7 +5,7 @@ class VideoList extends React.Component {
   render(){
     let listItems = this.props.a_list;
     return (
-      <ul>{
+      <ul className = 'list'>{
         listItems.map ((item) => (
           <ListItem li = {item} playVideo = {this.props.playVideo}/>
         ))

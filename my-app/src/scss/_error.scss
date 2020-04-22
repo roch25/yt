@@ -1,0 +1,15 @@
+.error{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -140px;
+    color: $color-white;
+    font-size: 12px;
+    img{
+        padding: 0 2px;
+        margin: 0 18% auto;
+        min-width: 30min;
+        min-height: 20vmin;
+    }
+}
