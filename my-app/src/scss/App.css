@@ -212,13 +212,21 @@ body {
   padding: 2px;
 }
 
+.main-body .player__sub p {
+  margin-bottom: 6px;
+}
+
 .main-body .player__sub iframe {
   width: 620px;
   height: 340px;
 }
 
+.main-body .player__sub__title {
+  font-size: 3vh;
+}
+
 .main-body .player__sub__views {
-  font-size: 14px;
+  font-size: 2vh;
   color: #b1abaf;
 }
 
@@ -232,6 +240,7 @@ body {
 
 .main-body .player__sub__likes__value {
   margin-top: -0.07rem;
+  font-size: 2.5vh;
 }
 
 .main-body .player__close {

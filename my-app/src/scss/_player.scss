@@ -12,12 +12,18 @@
     animation: 2s ease-in 0s 1 slideIn; //to-do impro
     &__sub{
         padding: 2px;
-        iframe{
+        p{
+            margin-bottom: 6px;
+        }
+        iframe{ //to-do ---size small screen
             width: 620px;
             height: 340px;
         }
+        &__title{
+            font-size: map-get($font-size, medium);   
+        }
         &__views{
-            font-size: 14px;
+            font-size: map-get($font-size, x-small);
             color: $color-light-grey;
         }
         &__likes{
@@ -26,6 +32,7 @@
             padding: 0.1rem;
             &__value{
                 margin-top: -0.07rem;
+                font-size: map-get($font-size, small);
             }
         }
     }
