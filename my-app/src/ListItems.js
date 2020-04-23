@@ -6,8 +6,10 @@ class ListItem extends React.Component {
   }
   render() {
     let a_list = this.props.li;
+    console.log(this.props.side);
+    
     return (
-      <li className='list__item' key={a_list.id.videoId}
+      <li className={'list__item' +' '+ this.props.side} key={a_list.id.videoId}
       onClick={
         ()=>this.props.playVideo(a_list.id.videoId, a_list.snippet.title, a_list.snippet.channelTitle)
       }>

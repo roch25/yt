@@ -4,12 +4,11 @@
     display: grid;
     grid-template-columns: 94% 6%;
     max-height: 460px;
-    background-color: $color-alt-grey;
     position: relative;
-    color: $color-white;
     border-radius: 4px;
+    background-color: $color-alt-grey;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
-    animation: 2s ease-in 0s 1 slideIn; //to-do impro
+    animation: 1s ease-in 0s 1 slideIn;
     &__sub{
         padding: 2px;
         p{
@@ -39,30 +38,41 @@
     &__close{
         cursor: pointer;
         padding: 1px;
-        width: 30px;
-        height: 30px;
-        background-color: $color-light-grey;
-        top: -4px;
-        right: -4px;
-        border-radius: 20px;
+        width: 25px;
+        height: 25px;
+        top: 0px;
+        right: 0px;
+        border-radius: 4px;
         position: absolute;
         text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        background-color: $color-alt-grey;  
+        color: $color-white;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        border: none;
         &:hover{
-            background-color: $color-white;
-            color: $color-dark-grey;
+            background-color: lighten($color: $color-dark-grey, $amount: 20);
         }
         &:active{
             transform: translateY(2px);
+        }
+    }
+    @include mobile(){
+        flex-direction: column;
+        .iframe{
+            width: 540px;
+            height: 250px;
+        }
+        img{
+            width: 18vh;
+            height: 6vh;
         }
     }
 }
 
 @keyframes slideIn{
     0%{
-        transform: translateX(-100%);
+        transform: translateX(-60%);
     }
     100%{
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }

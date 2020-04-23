@@ -14,17 +14,21 @@ class App extends React.Component {
       videoList: [],
       showVideoPlayer: false,
       videoDetails: {},
-      vidInfo: {}
+      vidInfo: {},
+      class2: 'nope'
     }
   }
   playVideo = async (...videoDetails) => { 
     let res = await fetchSearchList('videos', videoDetails[0]);
     console.log(res.items);
-    this.setState({ showVideoPlayer : true , videoDetails, vidInfo: res.items })
+    this.setState({ showVideoPlayer : true , videoDetails, vidInfo: res.items, class2: 'side' })
+    console.log("a");
+    
+    
   }
   
   closeVideoPlayer = () => { 
-    this.setState({showVideoPlayer : false})
+    this.setState({showVideoPlayer : false, class2: 'nope'})
   }
   
   handleClick = async () => {
@@ -45,7 +49,7 @@ class App extends React.Component {
             <i className="search-button" type="button" onClick={this.handleClick} />
           </div>
         </header>
-        <div className = 'main-body'>
+        <body>
           {
             this.state.showVideoPlayer &&
             <VideoPlayer
@@ -57,10 +61,10 @@ class App extends React.Component {
           }
           { 
             this.state.videoList !== undefined ? 
-            <VideoList a_list={this.state.videoList} playVideo={this.playVideo} /> 
+            <VideoList a_list={this.state.videoList} playVideo={this.playVideo} side={this.state.class2} /> 
             : <ErrorMsg msg = 'An error has occured' src = {error}/>
           }
-        </div>
+        </body>
       </div>
     );
   }

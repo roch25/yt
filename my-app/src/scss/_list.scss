@@ -11,6 +11,7 @@
         overflow: hidden;
         border-radius: 8px;
         border: 1px solid $color-dark-grey;
+        transition: font-size 2s ease-in;       
         .container{
             position: relative;
             img {
@@ -50,7 +51,6 @@
                 font-style: normal;
                 font-weight: lighter;
             }
-            // to-do change font when player is open
         }
         &:hover {
             border: 1px solid $color-light-grey;
@@ -60,6 +60,7 @@
             opacity: 0.7;
         }
     }
+  
     @include mobile(){
         .list__item__list2{
 
@@ -77,5 +78,28 @@
             min-width: 28min;
             min-height: 20vmin;
         }   
+    }
+    
+}
+
+.side{
+    animation: 1s ease-in 0s 1 slideIn; 
+    .list__item__list2__title{
+        font-size: map-get($font-size, small);
+    }
+    .list__item__list2__channelName{
+        font-size: map-get($font-size, x-small);
+    }
+    .list__item__list2__desc{
+        font-size: map-get($font-size, x-small);
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(-100%);
+    }
+    70%{
+        transform: translateX(80%);
     }
 }
