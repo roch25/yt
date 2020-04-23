@@ -14,8 +14,8 @@
                 min-width:40vw;
                 position: relative;
                 background-color: $color-dark-grey;
-                padding: 10px 30px 10px 5px;
-                border-radius: 4px;
+                padding: 10px 30px 10px 10px;
+                border-radius: 8px;
             }
             .search-button{
                 background: url(search_n1.png) no-repeat center center;
@@ -28,12 +28,14 @@
                 top: 0.09em;
                 cursor: pointer;
                 &:hover{
-                    background-color: lighten($color: $color-dark-grey, $amount: 40);  
+                    background-size: 16px 16px;
+                    background-color: lighten($color: $color-light-grey, $amount: 20); 
+                    opacity: 0.2;
                 }
             } 
         }
         @include mobile(){
-            // flex-direction: column;
+            // flex-direction: column; // search box below yt icon
             .Search{
                 margin: 16px 4% auto;
             }

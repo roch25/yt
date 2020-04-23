@@ -36,7 +36,7 @@ class App extends React.Component {
     let res = await fetchSearchList('search', str);
     res = res.items;
     console.log(res);
-    this.setState({ videoList: res , showVideoPlayer : false}) 
+    this.setState({ videoList: res , showVideoPlayer : false, class2: 'nope'}) 
   }
   
   render() {

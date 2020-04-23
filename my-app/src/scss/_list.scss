@@ -6,6 +6,7 @@
         cursor: pointer;
         padding: 2px;
         margin: 0 0 4px 0;
+        background-image: linear-gradient(to right, rgb(49, 49, 49) ,rgb(37, 37, 37));
         display: flex;
         max-height: 30vh;
         overflow: hidden;
@@ -50,14 +51,14 @@
                 font-size: map-get($font-size, small);
                 font-style: normal;
                 font-weight: lighter;
-            }
+                }
         }
         &:hover {
             border: 1px solid $color-light-grey;
         }
         &:active {
             border: 1px solid $color-light-grey;
-            opacity: 0.7;
+            background-image: linear-gradient(to right, rgb(58, 58, 58) ,rgb(44, 44, 44));
         }
     }
   
@@ -97,7 +98,7 @@
 
 @keyframes slideIn{
     0%{
-        transform: translateX(-100%);
+        transform: translateX(-100%); 
     }
     70%{
         transform: translateX(80%);

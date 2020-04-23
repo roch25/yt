@@ -31,8 +31,8 @@
   min-width: 40vw;
   position: relative;
   background-color: #2A2729;
-  padding: 10px 30px 10px 5px;
-  border-radius: 4px;
+  padding: 10px 30px 10px 10px;
+  border-radius: 8px;
 }
 
 .App header .Search .search-button {
@@ -48,7 +48,9 @@
 }
 
 .App header .Search .search-button:hover {
-  background-color: #938a90;
+  background-size: 16px 16px;
+  background-color: #e2e0e1;
+  opacity: 0.2;
 }
 
 @media (max-width: 800px) {
@@ -83,6 +85,8 @@ body .list__item {
   cursor: pointer;
   padding: 2px;
   margin: 0 0 4px 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#313131), to(#252525));
+  background-image: linear-gradient(to right, #313131, #252525);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,7 +152,8 @@ body .list__item:hover {
 
 body .list__item:active {
   border: 1px solid #b1abaf;
-  opacity: 0.7;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3a3a3a), to(#2c2c2c));
+  background-image: linear-gradient(to right, #3a3a3a, #2c2c2c);
 }
 
 @media (max-width: 800px) {
