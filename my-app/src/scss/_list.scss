@@ -1,25 +1,25 @@
 .list{
-    padding: 0 2px;
+    padding: 2px 4px;
     margin: 2vh 4vh auto;
     max-width: 70vw;
     &__item{
+        list-style: none;
         cursor: pointer;
         padding: 2px;
         margin: 0 0 4px 0;
-        background-image: linear-gradient(to right, rgb(49, 49, 49) ,rgb(37, 37, 37));
+        background-image: linear-gradient(to right, rgb(53, 52, 52) ,rgb(36, 36, 36));
         display: flex;
-        max-height: 30vh;
         overflow: hidden;
         border-radius: 8px;
+        width: 900px;
         border: 1px solid $color-dark-grey;
-        transition: font-size 2s ease-in;       
-        .container{
+        animation: 3500ms ease-out 0s 1 slideOut; 
+        transition: width 3200ms ease-in;
+        .container1{
             position: relative;
             img {
-                min-width: 32min;
+                min-width: 28min;
                 min-height: 24vmin;
-                margin-right: 5px;
-                padding: 2px;
             }
             p{ // to-do: display duration of vid
                 position: absolute;
@@ -35,9 +35,6 @@
         }
         &__list2{
             padding: 2px;
-            p{
-                margin: 7px;             
-            }
             &__title{
                 font-size: map-get($font-size, medium);
                 font-weight: bold;
@@ -51,7 +48,7 @@
                 font-size: map-get($font-size, small);
                 font-style: normal;
                 font-weight: lighter;
-                }
+            }
         }
         &:hover {
             border: 1px solid $color-light-grey;
@@ -62,29 +59,28 @@
         }
     }
   
-    @include mobile(){
-        .list__item__list2{
-
-            &__title{
-                font-size: map-get($font-size, small);
-            }
-            &__channelName{
-                font-size: map-get($font-size, small);
-            }
-            &__desc{
-               font-size: map-get($font-size, x-small);
-            }
-        }
-        .container img{
-            min-width: 28min;
-            min-height: 20vmin;
-        }   
-    }
-    
+    // @include mobile(){
+    //     .list__item__list2{
+    //         &__title{
+    //             font-size: map-get($font-size, small);
+    //         }
+    //         &__channelName{
+    //             font-size: map-get($font-size, small);
+    //         }
+    //         &__desc{
+    //            font-size: map-get($font-size, x-small);
+    //         }
+    //     }
+    //     .container img{
+    //         min-width: 28min;
+    //         min-height: 20vmin;
+    //     }   
+    // } 
 }
 
 .side{
-    animation: 1s ease-in 0s 1 slideIn; 
+    animation: 3500ms ease-in 0s 1 slideIn; 
+    width: 500px;
     .list__item__list2__title{
         font-size: map-get($font-size, small);
     }
@@ -92,15 +88,24 @@
         font-size: map-get($font-size, x-small);
     }
     .list__item__list2__desc{
-        font-size: map-get($font-size, x-small);
+        font-size: map-get($font-size, xx-small);
     }
 }
 
 @keyframes slideIn{
     0%{
-        transform: translateX(-100%); 
+        transform: translateX(0%); 
     }
-    70%{
-        transform: translateX(80%);
+    90%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut{
+    0%{
+        transform: translateX(100%); 
+    }
+    90%{
+        transform: translateX(0%);
     }
 }

@@ -4,12 +4,16 @@
     left: 50%;
     margin-top: -40px;
     margin-left: -140px;
-    color: $color-white;
-    font-size: 12px;
+    font-size: map-get($font-size, medium);
+    
     img{
         padding: 0 2px;
         margin: 0 18% auto;
-        min-width: 30min;
-        min-height: 20vmin;
+        max-width: 50%;
+        max-height: 60%;
+    }
+    p{
+        // align-items: center;
+        // color: red;
     }
 }

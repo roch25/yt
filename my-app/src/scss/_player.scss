@@ -3,13 +3,14 @@
     margin: 2vh;
     display: grid;
     grid-template-columns: 94% 6%;
-    max-height: 460px;
     position: relative;
     border-radius: 4px;
+    height: fit-content;
     background-color: $color-alt-grey;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
-    animation: 1s ease-in 0s 1 slideIn; 
+    // animation:3500ms ease-in 0s 1 slideIn; 
     &__sub{
+        height: 50%;
         padding: 2px;
         p{
             margin-bottom: 6px;
@@ -58,7 +59,7 @@
     @include mobile(){
         flex-direction: column;
         .iframe{
-            width: 540px;
+            width: 340px;
             height: 250px;
         }
         img{
@@ -70,9 +71,9 @@
 
 @keyframes slideIn{
     0%{
-        transform: translateX(-60%);
+        transform: translateX(-100%);
     }
-    100%{
+    90%{
         transform: translateX(0);
     }
 }

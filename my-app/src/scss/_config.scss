@@ -4,7 +4,8 @@ $color-white: white;
 $color-alt-grey: #3A3A3A;
 $font-family:Ariel, Helvetica, sans-serif;
 $font-size: (
-    "x-small": 2.3vh,
+    "xx-small": 2.0vh,
+    "x-small": 2.2vh,
     "small": 2.5vh,
     "medium" : 3vh,
     "large" : 3.5vh
@@ -14,11 +15,10 @@ $font-size: (
     font-family: $font-family;
     margin: 0.5vh;
     color: $color-white;
-   
 }
 
 @mixin mobile {
-    @media (max-width: 800px) {
+    @media (max-width: 520px) {
         @content;
     }
 }

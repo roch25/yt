@@ -1,4 +1,4 @@
-async function fetchSearchList(activity, identifier) { //not a good name identifier :/
+async function fetchSearchList(activity, identifier) { 
   const key = "AIzaSyB9jaiRZ6En179_1VcxU4sXeecSd_jg4VM";
   const url = "https://www.googleapis.com/youtube/v3";
   let search_item;

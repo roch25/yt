@@ -1,47 +1,78 @@
 .App{
-    header{
-        display: flex;
-        flex-direction: row;
-        img{
-            width: 20vh;
-            height: 8vh;
-            pointer-events: none;
-        }
-        .Search{
-            margin: 16px 20% auto;
+    &-header{
+        .search{
+            margin: 20px 30% auto;
             display: flex;
-            #search-box{
-                min-width:40vw;
-                position: relative;
+            &-box{
+                width:40vw;
+                padding: 10px 30px 10px 50px;
+                border-radius: 10px;
+                border: 3px solid $color-white;
                 background-color: $color-dark-grey;
-                padding: 10px 30px 10px 10px;
-                border-radius: 8px;
-            }
-            .search-button{
-                background: url(search_n1.png) no-repeat center center;
-                background-size: 16px 16px;
-                width: 46px;
-                border-radius: 0 3px 3px 0;
-                height: 38px;
-                position: relative;
-                left: -59px;
-                top: 0.09em;
-                cursor: pointer;
+                font-size: map-get($font-size, small);
                 &:hover{
-                    background-size: 16px 16px;
-                    background-color: lighten($color: $color-light-grey, $amount: 20); 
-                    opacity: 0.2;
+                    box-shadow: 0 2px 4px 0 rgba(165, 165, 165, 0.2), 0 4px 8px 0 rgba(133, 133, 133, 0.19);
                 }
-            } 
-        }
-        @include mobile(){
-            // flex-direction: column; // search box below yt icon
-            .Search{
-                margin: 16px 4% auto;
             }
-            img{
-                width: 18vh;
-                height: 6vh;
+            &-yt{
+                background: url(yt_logo-1.png) no-repeat center center;
+                background-size: 36px 28px;
+                width: 50px;
+                height: 38px;
+                border-radius: 3px 0px 0px 3px;
+                left: 50px;
+                position: relative;
+                top: 0.25em;
+            }
+            &-icon{
+                cursor: pointer;
+                left: -120px;
+                top: 0.03em;
+                height: max-content;
+                padding: 15px 20px;
+                background-color: transparent; 
+                opacity: 0.7;
+                position: relative;
+                transition: all 0.1s ease-in;
+                &-tooltiptext {
+                    visibility: hidden;
+                    width: 120px;
+                    background-color: black;
+                    color: $color-white;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 0;
+                    position: absolute;
+                    z-index: 1;
+                }
+                &:hover{
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scale(1.4);
+                }
+                &:active{
+                    transform: translateY(1px);
+                    opacity: 0.7;
+                }
+            }
+            &-remove-icon{
+                cursor: pointer;
+                left: -100px;
+                top: 0.03em;
+                height: max-content;
+                padding: 15px 20px;
+                background-color: transparent; 
+                opacity: 0.5;
+                visibility: hidden;
+                transition: all 0.1s ease-in;
+                &:hover{
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+                &:active{
+                    transform: translateY(1px);
+                    opacity: 0.7;
+                }
             }
         }
     }

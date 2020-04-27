@@ -22,9 +22,6 @@ class App extends React.Component {
     let res = await fetchSearchList('videos', videoDetails[0]);
     console.log(res.items);
     this.setState({ showVideoPlayer : true , videoDetails, vidInfo: res.items, class2: 'side' })
-    console.log("a");
-    
-    
   }
   
   closeVideoPlayer = () => { 
@@ -42,11 +39,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <img src={logo} alt="logo" />
-          <div className="Search">
-            <input type="search" id="search-box" placeholder="Search" /> &nbsp;
-            <i className="search-button" type="button" onClick={this.handleClick} />
+        <header className="App-header">
+          <div className="search">
+            <i className="search-yt"/>
+            <input type="search" id="search-box" className = "search-box" placeholder="Search" />
+            <i class = 'glyphicon glyphicon-remove search-remove-icon' type="button" ></i>
+            <i class = 'glyphicon glyphicon-search search-icon' type="button" onClick={this.handleClick}></i>
           </div>
         </header>
         <body>
